@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>Калькулятор</title>
+	</head>
+	<body>
+		<div>
+			<h1>Калькулятор</h1>
+		</div>
+		<div>
+			<form method="post">
+				<div>
+					<label for="num1"> 1 число:</label>
+					<input type="number" name="num1"  value="{{ request.form['num1'] }}">
+				</div>
+				<div>
+					<label for="num2"> 2 число:</label>
+					<input type="number" name="num2"  value="{{ request.form['num2'] }}">
+				</div>
+				<div>
+					<label for="sign"> Операция (+, -, *, /):</label>
+					<input type="text" name="sign"  value="{{ request.form['sign'] }}">
+				</div>
+				<div>
+					<input type="submit" class="btn btn-success" value="Посчитать">
+				</div>
+				<div>
+					<label>Результат:</label>
+					<input type="text" name="result" value="{{ result }}">
+				</div>
+				<div>
+					<label>История:</label>
+					<input type="text" name="history" value="{{ history }}">
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
